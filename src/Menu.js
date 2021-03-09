@@ -1,6 +1,16 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import ItemDetail from './ItemDetail';
 //import items from './data';
-const Menu = ({items}) => {
+const Menu = ({items,itemdetail}) => {
+  /* const showDetail = () =>{
+
+    itemdetail = true;
+    console.log(itemdetail);
+    return <ItemDetail></ItemDetail>;
+  }
+ */
+
   return (
     <div className="sectio-center">
       {items.map((menuItem)=>{
@@ -14,11 +24,13 @@ const Menu = ({items}) => {
                 <h4 className='price'>${price}</h4>
               </header>
               <p className='item-text'>{desc}</p>
+              <Link to={`/menudetail/${id}`} className='btn-info'>Details</Link>
+
             </div>
           </article>
 
         );
-      })};
+      })}
 
     </div>
 
